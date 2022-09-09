@@ -92,9 +92,7 @@ Object.defineProperty(navigator, 'serviceWorker', {
 Object.defineProperty(navigator, 'mediaDevices', {
   value: {
     getUserMedia: () => {
-      return new Promise((resolve, reject) => {
-        resolve(new Stream());
-      });
+      return Promise.resolve(new Stream());
     },
     ondevicechange: jest.fn(),
     onmessage: jest.fn(),
